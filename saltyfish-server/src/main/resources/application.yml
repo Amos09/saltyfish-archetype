@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: saltyfish-archetype
+  profiles:
+    active: dev
