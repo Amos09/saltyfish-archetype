@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>saltyfish-framework</artifactId>
         <groupId>com.saltyfish</groupId>
@@ -10,14 +11,14 @@
     <artifactId>${artifactId}</artifactId>
     <version>${version}</version>
     <packaging>pom</packaging>
-	<modules>
-		<module>${rootArtifactId}-server</module>
-		<module>${rootArtifactId}-client</module>
-		<module>${rootArtifactId}-adapter</module>
-		<module>${rootArtifactId}-app</module>
-		<module>${rootArtifactId}-infrastructure</module>
-		<module>${rootArtifactId}-domain</module>
-	</modules>
+    <modules>
+        <module>${rootArtifactId}-server</module>
+        <module>${rootArtifactId}-client</module>
+        <module>${rootArtifactId}-adapter</module>
+        <module>${rootArtifactId}-app</module>
+        <module>${rootArtifactId}-infrastructure</module>
+        <module>${rootArtifactId}-domain</module>
+    </modules>
     <build>
         <finalName>${project.artifactId}</finalName>
         <extensions>

@@ -2,7 +2,7 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 server:
-  port: 8088
+  port: 8011
   http2:
      enabled: true
   undertow:
@@ -23,6 +23,11 @@ spring:
   mvc:
      pathmatch:
        matching-strategy: ant_path_matcher
+  security:
+     oauth2:
+       resourceserver:
+         jwt:
+           jwk-set-uri: http://localhost:9999/saltyfish-auth/rsa/publicKey
   redis:
     database: 0
     host: 127.0.0.1
@@ -55,3 +60,23 @@ cache:
      use-key-prefix: true
      ${symbol_pound} 缓存前缀，没有设置使用注解的缓存名称(value)作为前缀，和注解的key用双冒号::拼接组成完整缓存key
      key-prefix: 'admin:'
+
+${symbol_pound} 阿里云短信配置
+aliyun:
+  sms:
+    accessKeyId: LTAI5tSMgfxxxxxxdiBJLyR
+    accessKeySecret: SoOWRqpjtS7xxxxxxZ2PZiMTJOVC
+    domain: dysmsapi.aliyuncs.com
+    regionId: cn-shanghai
+    templateCode: SMS_22xxx770
+    signName: 番薯
+
+security:
+  ignoreUrls:
+      - /webjars/**
+      - /doc.html
+      - /swagger-resources/**
+      - /v2/api-docs
+      - /oauth/**
+      - /rsa/publicKey
+      - /sms-code

@@ -12,11 +12,12 @@
     <name>${artifactId}</name>
 
     <dependencies>
-		<dependency>
-			<groupId>com.saltyfish</groupId>
-			<artifactId>${rootArtifactId}-adapter</artifactId>
-			<version>${version}</version>
-		</dependency>
+        <dependency>
+            <groupId>com.saltyfish</groupId>
+            <artifactId>${rootArtifactId}-adapter</artifactId>
+            <version>${version}</version>
+        </dependency>
+
         <dependency>
             <groupId>com.saltyfish</groupId>
             <artifactId>saltyfish-framework-web</artifactId>
