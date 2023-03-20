@@ -14,9 +14,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.saltyfish</groupId>
+            <groupId>${groupId}</groupId>
             <artifactId>${rootArtifactId}-domain</artifactId>
-            <version>1.0.0</version>
+            <version>${version}</version>
         </dependency>
         <!-- spring boot 配置所需依赖 -->
         <dependency>

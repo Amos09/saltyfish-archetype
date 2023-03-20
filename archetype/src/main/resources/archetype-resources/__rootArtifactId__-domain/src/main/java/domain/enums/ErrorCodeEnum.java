@@ -1,7 +1,7 @@
 #set( $symbol_pound = '#' )
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
-package ${package}.infrastructure.enums;
+package ${package}.domain.enums;
 
 import ${groupId}.framework.tools.response.IResultCode;
 import lombok.AllArgsConstructor;
