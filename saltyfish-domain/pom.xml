@@ -26,6 +26,12 @@
             <artifactId>spring-boot-starter-validation</artifactId>
             <optional>true</optional>
         </dependency>
+
+        <dependency>
+            <groupId>com.saltyfish</groupId>
+            <artifactId>saltyfish-integration</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <build>
