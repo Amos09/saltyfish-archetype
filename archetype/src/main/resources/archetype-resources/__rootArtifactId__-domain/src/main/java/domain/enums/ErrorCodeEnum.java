@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.domain.enums;
 
-import com.saltyfish.framework.tools.response.IResultCode;
+import ${groupId}.framework.tools.response.IResultCode;
 import lombok.AllArgsConstructor;
 
 /**
