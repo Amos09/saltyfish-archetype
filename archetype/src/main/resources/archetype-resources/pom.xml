@@ -17,8 +17,8 @@
         <module>${rootArtifactId}-client</module>
         <module>${rootArtifactId}-domain</module>
         <module>${rootArtifactId}-infrastructure</module>
-        <module>${rootArtifactId}-server</module>
         <module>${rootArtifactId}-integration</module>
+        <module>${rootArtifactId}-server</module>
     </modules>
 
     <build>
