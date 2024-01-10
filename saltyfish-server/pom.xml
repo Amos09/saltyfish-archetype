@@ -19,6 +19,7 @@
             <artifactId>saltyfish-adapter</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.saltyfish</groupId>
             <artifactId>saltyfish-client</artifactId>

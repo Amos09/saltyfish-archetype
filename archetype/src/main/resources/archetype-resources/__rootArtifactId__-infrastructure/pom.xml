@@ -18,6 +18,7 @@
             <artifactId>${rootArtifactId}-domain</artifactId>
             <version>${version}</version>
         </dependency>
+
         <!-- spring boot 配置所需依赖 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -30,6 +31,7 @@
             <artifactId>saltyfish-framework-mybatis</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.saltyfish</groupId>
             <artifactId>saltyfish-framework-redis</artifactId>

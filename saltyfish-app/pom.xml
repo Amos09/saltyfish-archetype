@@ -17,14 +17,22 @@
     <dependencies>
         <dependency>
             <groupId>com.saltyfish</groupId>
+            <artifactId>saltyfish-integration</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.saltyfish</groupId>
             <artifactId>saltyfish-infrastructure</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <dependency>
             <groupId>com.saltyfish</groupId>
             <artifactId>saltyfish-client</artifactId>
             <version>1.0.0</version>
         </dependency>
+
         <!-- 单元测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
