@@ -6,33 +6,31 @@
         <artifactId>saltyfish-framework</artifactId>
         <groupId>com.saltyfish</groupId>
         <version>1.0.0</version>
-        <relativePath/>
     </parent>
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.saltyfish</groupId>
     <artifactId>saltyfish-archetype</artifactId>
-    <version>${saltyfish.version}</version>
+    <version>1.0.0</version>
     <packaging>pom</packaging>
 
-	<properties>
-		<saltyfish.version>1.0.0</saltyfish.version>
-		<maven.compiler.source>${java.version}</maven.compiler.source>
-		<maven.compiler.target>${java.version}</maven.compiler.target>
-		<maven.plugin.version>3.8.1</maven.plugin.version>
-		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	</properties>
+    <properties>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <maven.plugin.version>3.8.1</maven.plugin.version>
+        <maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
 
-	<modules>
-		<module>saltyfish-adapter</module>
-		<module>saltyfish-app</module>
-		<module>saltyfish-client</module>
-		<module>saltyfish-domain</module>
-		<module>saltyfish-infrastructure</module>
-		<module>saltyfish-server</module>
-		<module>saltyfish-integration</module>
-	</modules>
+    <modules>
+        <module>saltyfish-adapter</module>
+        <module>saltyfish-app</module>
+        <module>saltyfish-client</module>
+        <module>saltyfish-domain</module>
+        <module>saltyfish-infrastructure</module>
+        <module>saltyfish-server</module>
+        <module>saltyfish-integration</module>
+    </modules>
 
 
     <build>
@@ -50,19 +48,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-archetype-plugin</artifactId>
                     <version>3.1.1</version>
-                </plugin>
-                <plugin>
-                    <groupId>io.spring.javaformat</groupId>
-                    <artifactId>spring-javaformat-maven-plugin</artifactId>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>validate</goal>
-                            </goals>
-                            <inherited>true</inherited>
-                            <phase>validate</phase>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -92,6 +77,27 @@
                         <source>${maven.compiler.source}</source>
                         <target>${maven.compiler.target}</target>
                     </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <configuration>
+                        <encoding>UTF-8</encoding>
+                        <includeEmptyDirs>true</includeEmptyDirs>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>io.spring.javaformat</groupId>
+                    <artifactId>spring-javaformat-maven-plugin</artifactId>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>validate</goal>
+                            </goals>
+                            <inherited>true</inherited>
+                            <phase>validate</phase>
+                        </execution>
+                    </executions>
                 </plugin>
                 <!-- 测试插件 -->
                 <plugin>
@@ -167,6 +173,30 @@
                             </goals>
                         </execution>
                     </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-project-info-reports-plugin</artifactId>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -1,16 +1,19 @@
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
 <?xml version="1.0" encoding="UTF-8"?>
 <project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.saltyfish</groupId>
-    <artifactId>saltyfish-archetype</artifactId>
-    <version>1.0.0</version>
+    <groupId>${package}</groupId>
+    <artifactId>${parentArtifactId}</artifactId>
+    <version>${version}</version>
   </parent>
-  <groupId>com.saltyfish</groupId>
-  <artifactId>saltyfish-app</artifactId>
-  <version>1.0.0</version>
-  <name>saltyfish-app</name>
+  <groupId>${package}</groupId>
+  <artifactId>${artifactId}</artifactId>
+  <version>${version}</version>
+  <name>${artifactId}</name>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
@@ -19,24 +22,24 @@
   </licenses>
   <dependencies>
     <dependency>
-      <groupId>com.saltyfish</groupId>
+      <groupId>${package}</groupId>
       <artifactId>saltyfish-integration</artifactId>
-      <version>1.0.0</version>
+      <version>${version}</version>
     </dependency>
     <dependency>
-      <groupId>com.saltyfish</groupId>
+      <groupId>${package}</groupId>
       <artifactId>saltyfish-infrastructure</artifactId>
-      <version>1.0.0</version>
+      <version>${version}</version>
     </dependency>
     <dependency>
-      <groupId>com.saltyfish</groupId>
+      <groupId>${package}</groupId>
       <artifactId>saltyfish-client</artifactId>
-      <version>1.0.0</version>
+      <version>${version}</version>
     </dependency>
     <dependency>
-      <groupId>com.saltyfish</groupId>
+      <groupId>${package}</groupId>
       <artifactId>saltyfish-framework-test</artifactId>
-      <version>1.0.0</version>
+      <version>${version}</version>
     </dependency>
   </dependencies>
   <build>
@@ -47,7 +50,7 @@
         <version>3.1.1</version>
       </extension>
     </extensions>
-    <finalName>${project.artifactId}</finalName>
+    <finalName>${symbol_dollar}{project.artifactId}</finalName>
     <pluginManagement>
       <plugins>
         <plugin>
@@ -57,28 +60,28 @@
         <plugin>
           <artifactId>maven-compiler-plugin</artifactId>
           <configuration>
-            <source>${java.version}</source>
-            <target>${java.version}</target>
+            <source>${symbol_dollar}{java.version}</source>
+            <target>${symbol_dollar}{java.version}</target>
             <annotationProcessorPaths>
               <path>
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
+                <version>${symbol_dollar}{lombok.version}</version>
               </path>
               <path>
                 <groupId>org.mapstruct</groupId>
                 <artifactId>mapstruct-processor</artifactId>
-                <version>${mapstruct.version}</version>
+                <version>${symbol_dollar}{mapstruct.version}</version>
               </path>
               <path>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-configuration-processor</artifactId>
-                <version>${spring-boot.version}</version>
+                <version>${symbol_dollar}{spring-boot.version}</version>
               </path>
             </annotationProcessorPaths>
-            <encoding>${project.build.sourceEncoding}</encoding>
-            <source>${maven.compiler.source}</source>
-            <target>${maven.compiler.target}</target>
+            <encoding>${symbol_dollar}{project.build.sourceEncoding}</encoding>
+            <source>${symbol_dollar}{maven.compiler.source}</source>
+            <target>${symbol_dollar}{maven.compiler.target}</target>
           </configuration>
         </plugin>
         <plugin>
@@ -134,7 +137,7 @@
         <plugin>
           <groupId>com.rudikershaw.gitbuildhook</groupId>
           <artifactId>git-build-hook-maven-plugin</artifactId>
-          <version>${git-build-hook-maven-plugin.version}</version>
+          <version>${symbol_dollar}{git-build-hook-maven-plugin.version}</version>
           <executions>
             <execution>
               <goals>

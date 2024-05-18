@@ -1,0 +1,22 @@
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.{adoc,bat,groovy,html,java,js,jsp,kt,kts,md,properties,py,rb,sh,sql,svg,txt,xml,xsd}]
+indent_style = tab
+indent_size = 4
+ij_java_use_single_class_imports = true
+ij_java_class_count_to_use_import_on_demand = 999999
+
+[*.{groovy,java,kt,kts,xml,xsd}]
+indent_style = tab
+indent_size = 4
+continuation_indent_size = 8
+
+[Makefile]
+indent_style = tab
+tab_width = 4

@@ -28,16 +28,12 @@
     </pluginManagement>
   </build>
 
-  <description>Parent pom providing dependency and plugin management for applications built with Maven</description>
-
-  <url>https://spring.io/projects/spring-boot/saltyfish-framework/saltyfish-archetype</url>
+  <description>saltyfish项目基础功能组件库</description>
 
   <developers>
     <developer>
-      <name>Pivotal</name>
-      <email>info@pivotal.io</email>
-      <organization>Pivotal Software, Inc.</organization>
-      <organizationUrl>https://www.spring.io</organizationUrl>
+      <name>番薯(Amos09)</name>
+      <email>koali09@163.com</email>
     </developer>
   </developers>
 
@@ -48,7 +44,14 @@
     </license>
   </licenses>
 
-  <scm>
-    <url>https://github.com/spring-projects/spring-boot/saltyfish-framework/saltyfish-archetype</url>
-  </scm>
+  <distributionManagement>
+    <repository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+    </repository>
+    <snapshotRepository>
+      <id>ossrh</id>
+      <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>

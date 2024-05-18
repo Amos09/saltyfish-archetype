@@ -3,10 +3,40 @@
     xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory>.etc/checkstyle</directory>
+      <includes>
+        <include>**/*.xml</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.mvn</directory>
+      <includes>
+        <include>**/*.config</include>
+      </includes>
+    </fileSet>
+    <fileSet encoding="UTF-8">
+      <directory>.etc/git-hooks</directory>
+      <includes>
+        <include>**/*.</include>
+      </includes>
+    </fileSet>
+    <fileSet filtered="true" encoding="UTF-8">
+      <directory></directory>
+      <includes>
+        <include>.flattened-pom.xml</include>
+        <include>LICENSE.txt</include>
+      </includes>
+    </fileSet>
     <fileSet encoding="UTF-8">
       <directory></directory>
       <includes>
+        <include>.editorconfig</include>
+        <include>.gitattributes</include>
         <include>.gitignore</include>
+        <include>.springjavaformatconfig</include>
+        <include>CHANGELOG.md</include>
+        <include>README.md</include>
       </includes>
     </fileSet>
   </fileSets>
@@ -17,6 +47,12 @@
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.md</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
@@ -35,6 +71,12 @@
             <include>**/*.md</include>
           </includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
+          </includes>
+        </fileSet>
         <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
@@ -49,6 +91,12 @@
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.md</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
@@ -71,6 +119,12 @@
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.md</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">
@@ -101,6 +155,12 @@
             <include>**/*.md</include>
           </includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
+          </includes>
+        </fileSet>
         <fileSet encoding="UTF-8">
           <directory></directory>
           <includes>
@@ -111,7 +171,7 @@
     </module>
     <module id="${rootArtifactId}-server" dir="__rootArtifactId__-server" name="${rootArtifactId}-server">
       <fileSets>
-        <fileSet filtered="true" encoding="UTF-8">
+        <fileSet filtered="true" packaged="true" encoding="UTF-8">
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.java</include>
@@ -124,6 +184,12 @@
             <include>**/*.yml</include>
           </includes>
         </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
+          </includes>
+        </fileSet>
       </fileSets>
     </module>
     <module id="${rootArtifactId}-integration" dir="__rootArtifactId__-integration" name="${rootArtifactId}-integration">
@@ -132,6 +198,12 @@
           <directory>src/main/java</directory>
           <includes>
             <include>**/*.md</include>
+          </includes>
+        </fileSet>
+        <fileSet filtered="true" encoding="UTF-8">
+          <directory></directory>
+          <includes>
+            <include>.flattened-pom.xml</include>
           </includes>
         </fileSet>
         <fileSet encoding="UTF-8">

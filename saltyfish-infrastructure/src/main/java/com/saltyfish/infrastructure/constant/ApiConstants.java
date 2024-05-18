@@ -1,4 +1,4 @@
-package com.saltyfish.archetype.infrastructure.constant;
+package com.saltyfish.infrastructure.constant;
 
 /**
  * API 相关的枚举

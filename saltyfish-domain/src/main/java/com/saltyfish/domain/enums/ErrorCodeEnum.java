@@ -1,4 +1,4 @@
-package com.saltyfish.archetype.domain.enums;
+package com.saltyfish.domain.enums;
 
 import com.saltyfish.framework.common.exception.IResultCode;
 import lombok.AllArgsConstructor;

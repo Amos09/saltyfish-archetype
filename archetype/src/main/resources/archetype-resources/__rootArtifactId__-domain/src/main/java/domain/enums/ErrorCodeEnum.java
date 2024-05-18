@@ -3,7 +3,7 @@
 #set( $symbol_escape = '\' )
 package ${package}.domain.enums;
 
-import ${groupId}.framework.tools.response.IResultCode;
+import com.saltyfish.framework.common.exception.IResultCode;
 import lombok.AllArgsConstructor;
 
 /**
@@ -15,30 +15,30 @@ import lombok.AllArgsConstructor;
 @AllArgsConstructor
 public enum ErrorCodeEnum implements IResultCode {
 
-    SUCCESS(200, "操作成功"),
-    SYSTEM_ERROR(500, "系统异常"),
-    DATA_NOT_EXISTS(1004001000, "数据不存在"),
+	SUCCESS(200, "操作成功"), SYSTEM_ERROR(500, "系统异常"), DATA_NOT_EXISTS(1004001000, "数据不存在"),
 
-    ;
+	;
 
-    private Integer code;
-    private String message;
+	private Integer code;
 
-    @Override
-    public Integer getCode() {
-        return code;
-    }
+	private String message;
 
-    public void setCode(final Integer code) {
-        this.code = code;
-    }
+	@Override
+	public Integer getCode() {
+		return code;
+	}
 
-    @Override
-    public String getMessage() {
-        return this.message;
-    }
+	public void setCode(final Integer code) {
+		this.code = code;
+	}
 
-    public void setMessage(final String message) {
-        this.message = message;
-    }
+	@Override
+	public String getMessage() {
+		return this.message;
+	}
+
+	public void setMessage(final String message) {
+		this.message = message;
+	}
+
 }
