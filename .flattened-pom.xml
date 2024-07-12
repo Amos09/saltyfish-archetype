@@ -6,6 +6,7 @@
     <groupId>com.saltyfish</groupId>
     <artifactId>saltyfish-framework</artifactId>
     <version>1.0.0</version>
+    <relativePath></relativePath>
   </parent>
   <groupId>com.saltyfish</groupId>
   <artifactId>saltyfish-archetype</artifactId>
