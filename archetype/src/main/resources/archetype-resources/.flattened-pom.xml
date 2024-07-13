@@ -9,6 +9,7 @@
     <groupId>${package}</groupId>
     <artifactId>saltyfish-framework</artifactId>
     <version>${version}</version>
+    <relativePath></relativePath>
   </parent>
   <groupId>${package}</groupId>
   <artifactId>${artifactId}</artifactId>

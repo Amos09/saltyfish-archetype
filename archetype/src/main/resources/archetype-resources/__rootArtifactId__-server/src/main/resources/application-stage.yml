@@ -12,9 +12,6 @@ spring:
       - com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure ${symbol_pound} 排除 Druid 的自动配置，使用 dynamic-datasource-spring-boot-starter 配置多数据源
       - org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration ${symbol_pound} 排除积木报表带来的 MongoDB 的自动配置
       - org.springframework.boot.autoconfigure.quartz.QuartzAutoConfiguration ${symbol_pound} 默认 local 环境，不开启 Quartz 的自动配置
-      - de.codecentric.boot.admin.server.config.AdminServerAutoConfiguration ${symbol_pound} 禁用 Spring Boot Admin 的 Server 的自动配置
-      - de.codecentric.boot.admin.server.ui.config.AdminServerUiAutoConfiguration ${symbol_pound} 禁用 Spring Boot Admin 的 Server UI 的自动配置
-      - de.codecentric.boot.admin.client.config.SpringBootAdminClientAutoConfiguration ${symbol_pound} 禁用 Spring Boot Admin 的 Client 的自动配置
   datasource:
     druid: ${symbol_pound} Druid 【监控】相关的全局配置
       web-stat-filter:
@@ -53,13 +50,13 @@ spring:
           name: saltyfish-boot
           url: jdbc:mysql://127.0.0.1:3306/${symbol_dollar}{spring.datasource.dynamic.datasource.master.name}?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true ${symbol_pound} MySQL Connector/J 8.X 连接的示例
           username: root
-          password: amos0917
+          password: root0917
         slave: ${symbol_pound} 模拟从库，可根据自己需要修改
           name: saltyfish-boot
           lazy: true ${symbol_pound} 开启懒加载，保证启动速度
           url: jdbc:mysql://127.0.0.1:3306/${symbol_dollar}{spring.datasource.dynamic.datasource.slave.name}?useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true&nullCatalogMeansCurrent=true ${symbol_pound} MySQL Connector/J 8.X 连接的示例
           username: root
-          password: amos0917
+          password: root0917
 
   ${symbol_pound} Redis 配置。Redisson 默认的配置足够使用，一般不需要进行调优
   redis:
@@ -120,23 +117,39 @@ resilience4j:
 
 ${symbol_pound} Actuator 监控端点的配置项
 management:
+  ${symbol_pound}暴露actuator的全部endpoint（即/actuator系列路径)，默认只暴露少数endpoint
   endpoints:
     web:
       base-path: /actuator ${symbol_pound} Actuator 提供的 API 接口的根目录。默认为 /actuator
       exposure:
         include: '*' ${symbol_pound} 需要开放的端点。默认值只打开 health 和 info 两个端点。通过设置 * ，可以开放所有端点。
+  ${symbol_pound}显示节点健康的具体信息，/actuator/health默认只返回节点状态（up|down），不返回节点的具体信息
+  endpoint:
+    health:
+      show-details: always
 
 ${symbol_pound} Spring Boot Admin 配置项
 spring:
+  security:
+    user:
+      name: amos09
+      password: amos09
   boot:
     admin:
       ${symbol_pound} Spring Boot Admin Client 客户端的相关配置
       client:
-        url: http://127.0.0.1:${symbol_dollar}{server.port}/${symbol_dollar}{spring.boot.admin.context-path} ${symbol_pound} 设置 Spring Boot Admin Server 地址
+        url: http://127.0.0.1:9999 ${symbol_pound} 设置 Spring Boot Admin Server 地址
+        username: ${symbol_dollar}{spring.security.user.name}
+        password: ${symbol_dollar}{spring.security.user.password}
         instance:
           service-host-type: IP ${symbol_pound} 注册实例时，优先使用 IP [IP, HOST_NAME, CANONICAL_HOST_NAME]
       ${symbol_pound} Spring Boot Admin Server 服务端的相关配置
       context-path: /admin ${symbol_pound} 配置 Spring
+      metadata:
+        user:
+          name: ${symbol_dollar}{spring.security.user.name}
+          password: ${symbol_dollar}{spring.security.user.password}
+
 
 ${symbol_pound} 日志文件配置
 logging:
@@ -144,7 +157,7 @@ logging:
     name: ./logs/${symbol_dollar}{spring.application.name}.log ${symbol_pound} 日志文件名，全路径
   level:
     ${symbol_pound} 配置自己写的 MyBatis Mapper 打印日志
-    ${package}.archetype.infrastructure.mapper: debug
+    ${package}.*.infrastructure.mapper: debug
 
 --- ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} 微信公众号、小程序相关配置 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}
 wx:
@@ -163,8 +176,6 @@ wx:
       type: RedisTemplate ${symbol_pound} 采用 RedisTemplate 操作 Redis，会自动从 Spring 中获取
       key-prefix: wa ${symbol_pound} Redis Key 的前缀
       http-client-type: HttpClient ${symbol_pound} 采用 HttpClient 请求微信公众号平台
-
---- ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound} 芋道相关配置 ${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}${symbol_pound}
 
 saltyfish:
   captcha:

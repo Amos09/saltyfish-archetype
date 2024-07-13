@@ -171,8 +171,6 @@ wx:
       key-prefix: wa # Redis Key 的前缀
       http-client-type: HttpClient # 采用 HttpClient 请求微信公众号平台
 
---- #################### 芋道相关配置 ####################
-
 saltyfish:
   captcha:
     enable: false # 本地环境，暂时关闭图片验证码，方便登录等接口的测试；
