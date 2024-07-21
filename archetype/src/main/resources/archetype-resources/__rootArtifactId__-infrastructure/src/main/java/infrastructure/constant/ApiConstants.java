@@ -8,13 +8,11 @@ package ${package}.infrastructure.constant;
  */
 public class ApiConstants {
 
-	/**
-	 * 服务名
-	 *
-	 * 注意，需要保证和 spring.application.name 保持一致
-	 */
-	public static final String NAME = "archetype-server";
+    /**
+     * 服务名 注意，需要保证和 spring.application.name 保持一致
+     */
+    public static final String NAME = "archetype-server";
 
-	public static final String VERSION = "${version}";
+    public static final String VERSION = "${version}";
 
 }

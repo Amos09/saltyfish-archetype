@@ -2,11 +2,14 @@
 #set( $symbol_dollar = '$' )
 #set( $symbol_escape = '\' )
 <?xml version="1.0"?>
-<!DOCTYPE suppressions PUBLIC
-		"-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
-		"https://checkstyle.org/dtds/suppressions_1_2.dtd">
-<suppressions>
-	<suppress files="org.bson.types.ObjectId" checks="[a-zA-Z0-9]*" />
-	<suppress files="com.alibaba.excel.*.*${symbol_escape}.java" checks="[a-zA-Z0-9]*" />
 
+<!DOCTYPE suppressions PUBLIC
+  "-//Checkstyle//DTD SuppressionFilter Configuration 1.2//EN"
+  "https://checkstyle.org/dtds/suppressions_1_2.dtd">
+
+<suppressions>
+  <suppress checks="AvoidEscapedUnicodeCharacters"
+    files="StringUtils.java"
+    lines="101-103"/>
+  <suppress message="不要使用Unicode转义字符"/>
 </suppressions>

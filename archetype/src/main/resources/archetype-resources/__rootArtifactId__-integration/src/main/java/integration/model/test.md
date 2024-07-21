@@ -1,4 +1,5 @@
 #### ***本项目对象 适配器***
+
 ```
 // 基本对象
 public class UserBaseInfoVO {
