@@ -1,7 +1,7 @@
-#set($symbol_pound='#')
-        #set($symbol_dollar='$')
-        #set($symbol_escape='\' )
-        package ${package}.config;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package}.config;
 
 import com.saltyfish.framework.security.config.AuthorizeRequestsCustomizer;
 import org.springframework.beans.factory.annotation.Value;

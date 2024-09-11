@@ -1,7 +1,7 @@
-#set($symbol_pound='#')
-        #set($symbol_dollar='$')
-        #set($symbol_escape='\' )
-        package com.saltyfish;
+#set( $symbol_pound = '#' )
+#set( $symbol_dollar = '$' )
+#set( $symbol_escape = '\' )
+package ${package};
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

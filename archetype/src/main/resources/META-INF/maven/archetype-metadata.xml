@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<archetype-descriptor
-  xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd"
-  name="saltyfish-archetype"
-  xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<archetype-descriptor xsi:schemaLocation="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0 http://maven.apache.org/xsd/archetype-descriptor-1.1.0.xsd" name="saltyfish-archetype"
+    xmlns="https://maven.apache.org/plugins/maven-archetype-plugin/archetype-descriptor/1.1.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <fileSets>
     <fileSet filtered="true" encoding="UTF-8">
       <directory>.etc/checkstyle</directory>
@@ -21,6 +19,7 @@
       <directory>.etc/git-hooks</directory>
       <includes>
         <include>**/*.</include>
+        <include>pre-commit</include>
       </includes>
     </fileSet>
     <fileSet filtered="true" encoding="UTF-8">
@@ -136,8 +135,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${rootArtifactId}-infrastructure" dir="__rootArtifactId__-infrastructure"
-      name="${rootArtifactId}-infrastructure">
+    <module id="${rootArtifactId}-infrastructure" dir="__rootArtifactId__-infrastructure" name="${rootArtifactId}-infrastructure">
       <fileSets>
         <fileSet filtered="true" packaged="true" encoding="UTF-8">
           <directory>src/main/java</directory>
@@ -194,8 +192,7 @@
         </fileSet>
       </fileSets>
     </module>
-    <module id="${rootArtifactId}-integration" dir="__rootArtifactId__-integration"
-      name="${rootArtifactId}-integration">
+    <module id="${rootArtifactId}-integration" dir="__rootArtifactId__-integration" name="${rootArtifactId}-integration">
       <fileSets>
         <fileSet packaged="true" encoding="UTF-8">
           <directory>src/main/java</directory>
